@@ -47,7 +47,7 @@ public class AssercjeTest {
 		assertEqualsNoOrder(new String[] { "A", "B" }, new String[] { "B", "A" });
 		
 		// assercje dla wartosci boolean
-		assertTrue(new ArrayList().isEmpty(), "nowo utworzona tablica jest pusta");
+		assertTrue(new ArrayList<Object>().isEmpty(), "nowo utworzona tablica jest pusta");
 		assertFalse("a".isEmpty(), "lancuch skladajacy sie z jednej litery nie jest pusty");
 	}
 	
