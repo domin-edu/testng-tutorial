@@ -3,16 +3,10 @@ package pl.grinder.tutorial.easymock;
 import static org.easymock.EasyMock.createMock;
 import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.replay;
-import static org.easymock.EasyMock.verify;
-import static org.testng.Assert.assertEquals;
-
-import java.util.Arrays;
-import java.util.HashSet;
 
 import org.testng.annotations.Test;
 
 import pl.grinder.tutorial.testng.domena.KuponZgadula;
-import pl.grinder.tutorial.testng.domena.RezultatGry;
 import pl.grinder.tutorial.testng.uslugi.AutomatLotto;
 import pl.grinder.tutorial.testng.uslugi.MaszynaLosujaca;
 import pl.grinder.tutorial.testng.uslugi.ZgadulaNotyfikator;
