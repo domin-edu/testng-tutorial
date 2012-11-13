@@ -49,6 +49,11 @@ public class AssercjeTest {
 		// assercje dla wartosci boolean
 		assertTrue(new ArrayList<Object>().isEmpty(), "nowo utworzona tablica jest pusta");
 		assertFalse("a".isEmpty(), "lancuch skladajacy sie z jednej litery nie jest pusty");
+		
+		// mozna tez wykorzystac slowo kluczowe assert
+		int x = 1;
+		assert x < 2 : "1 < 2";
+		assert x > 2 : "1 < 2";
 	}
 	
 	@Test
