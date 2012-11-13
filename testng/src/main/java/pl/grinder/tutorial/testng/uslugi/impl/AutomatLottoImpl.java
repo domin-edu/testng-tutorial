@@ -7,6 +7,8 @@ import pl.grinder.tutorial.testng.domena.RezultatGry;
 import pl.grinder.tutorial.testng.uslugi.AutomatLotto;
 import pl.grinder.tutorial.testng.uslugi.MaszynaLosujaca;
 import pl.grinder.tutorial.testng.uslugi.ZgadulaNotyfikator;
+import pl.grinder.tutorial.testng.uslugi.wyjatki.AutomatLottoException;
+import pl.grinder.tutorial.testng.uslugi.wyjatki.NieczynnaMaszynaLosujacaException;
 
 public class AutomatLottoImpl implements AutomatLotto {
 	private MaszynaLosujaca maszynaLosujaca;
@@ -20,7 +22,7 @@ public class AutomatLottoImpl implements AutomatLotto {
 	public RezultatGry zagrajWZgadule(KuponZgadula kupon) {
 		zgadulaNotyfikator.powiadomONowejGrze();
 
-		Set<Integer> wynikLosowania = maszynaLosujaca.wylosuj(1, 45, 3);
+		Set<Integer> wynikLosowania = wylosujZaPomocaMaszyny();
 
 		RezultatGry rezultat = kupon.zwycieskiDla(wynikLosowania) ? RezultatGry.WYGRANA : RezultatGry.PRZEGRANA;
 
@@ -29,5 +31,13 @@ public class AutomatLottoImpl implements AutomatLotto {
 		}
 
 		return rezultat;
+	}
+
+	private Set<Integer> wylosujZaPomocaMaszyny() {
+		try {
+			return maszynaLosujaca.wylosuj(1, 45, 3);
+		} catch (NieczynnaMaszynaLosujacaException nme) {
+			throw new AutomatLottoException();
+		}
 	}
 }
