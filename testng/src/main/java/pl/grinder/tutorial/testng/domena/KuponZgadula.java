@@ -18,4 +18,8 @@ public class KuponZgadula {
 	public boolean zwycieskiDla(Set<Integer> wynikLosowania) {
 		return liczby.equals(wynikLosowania);
 	}
+
+	public boolean zawieraLiczbe(int liczba) {
+		return liczby.contains(liczba);
+	}
 }
