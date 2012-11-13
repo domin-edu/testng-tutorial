@@ -23,7 +23,7 @@ import pl.grinder.tutorial.testng.uslugi.impl.AutomatLottoImpl;
 
 public class KontrolaKolejnosciWywolanMetodTest {
 	@Test
-	public void utworzenie_mocka_i_zastapienie_zaleznosci() {
+	public void weryfikacja_kolejnosci_wywolywanych_metod() {
 		// given
 		MaszynaLosujaca maszynaMock = createMock(MaszynaLosujaca.class);
 		ZgadulaNotyfikator notyfikatorMock = createNiceMock(ZgadulaNotyfikator.class);
@@ -37,6 +37,10 @@ public class KontrolaKolejnosciWywolanMetodTest {
 		checkOrder(notyfikatorMock, true);
 		notyfikatorMock.powiadomOWygranej(kupon);
 		expectLastCall().times(1); 
+		// mozna powyzej uzyc rowniez:
+		// - times(int min, int max) - od min do max wywolan
+		// - atLeastOnce() - dokladnie jedno wywolanie
+		// - anyTimes() - obojetna liczba wywolan
 		notyfikatorMock.powiadomONowejGrze();
 		expectLastCall().times(1); 
 		
