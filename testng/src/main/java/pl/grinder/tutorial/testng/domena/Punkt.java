@@ -13,8 +13,8 @@ public class Punkt {
 		return new Punkt(x, y);
 	}
 
-	public Punkt przesunO(Integer deltaX, Integer deltaY) {
-		return new Punkt(x + deltaX, y + deltaY);
+	public Punkt przesunO(Przesuniecie przesuniecie) {
+		return new Punkt(x + przesuniecie.deltaX, y + przesuniecie.deltaY);
 	}
 
 	@Override
