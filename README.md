@@ -1,4 +1,4 @@
 testng-tutorial
 ===============
 
-Tutorial for TestNG
+Przykladowe testy prezentujace mozliwosci biblioteki TestNG oraz EasyMock
