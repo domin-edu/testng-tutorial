@@ -18,7 +18,6 @@ public class BudowanieWartosciZwracanychTest {
 	public void zwracanie_jako_rezultat_argumentu() {
 		List<String> listMock = createMock(List.class);
 
-		// andAnswer style
 		expect(listMock.remove(1)).andAnswer(new IAnswer<String>() {
 			public String answer() throws Throwable {
 				return getCurrentArguments()[0].toString();
