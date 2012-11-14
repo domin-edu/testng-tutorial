@@ -1,5 +1,6 @@
 package pl.grinder.tutorial.testng.domena;
 
+
 public class Punkt {
 	private Integer x;
 	private Integer y;
@@ -48,4 +49,12 @@ public class Punkt {
 		return true;
 	}
 
+	public static Punkt poczatekUkladu() {
+		return Punkt.oWspolrzednych(0, 0);
+	}
+
+	@Override
+	public String toString() {
+		return "Punkt [x=" + x + ", y=" + y + "]";
+	}
 }
